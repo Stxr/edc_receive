@@ -19,4 +19,9 @@
 #define KEY7_PRES	7		 
 void Key_Init(void);
 u8 KEY_Scan(u8 mode);
+extern void KEY_LCD(void);
+extern u8  a;
+extern u8  b;
+extern int c;
+extern u8  d;
 #endif

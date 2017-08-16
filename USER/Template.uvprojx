@@ -565,29 +565,14 @@
           <GroupName>myLib</GroupName>
           <Files>
             <File>
-              <FileName>AD9854.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\MyLib\AD9854.c</FilePath>
-            </File>
-            <File>
               <FileName>led.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\MyLib\led.c</FilePath>
             </File>
             <File>
-              <FileName>PE43503.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\MyLib\PE43503.c</FilePath>
-            </File>
-            <File>
               <FileName>Tool.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\MyLib\Tool.c</FilePath>
-            </File>
-            <File>
-              <FileName>HSMP3816.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\MyLib\HSMP3816.c</FilePath>
             </File>
             <File>
               <FileName>input.c</FileName>
@@ -610,29 +595,14 @@
               <FilePath>..\MyLib\my_usart.c</FilePath>
             </File>
             <File>
-              <FileName>lcd.c</FileName>
+              <FileName>adc.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\MyLib\lcd.c</FilePath>
+              <FilePath>..\MyLib\adc.c</FilePath>
             </File>
             <File>
-              <FileName>chinese.c</FileName>
+              <FileName>dac.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\MyLib\chinese.c</FilePath>
-            </File>
-            <File>
-              <FileName>lcdDisplay.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\MyLib\lcdDisplay.c</FilePath>
-            </File>
-            <File>
-              <FileName>menu.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\MyLib\menu.c</FilePath>
-            </File>
-            <File>
-              <FileName>chfont.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\MyLib\chfont.c</FilePath>
+              <FilePath>..\MyLib\dac.c</FilePath>
             </File>
           </Files>
         </Group>

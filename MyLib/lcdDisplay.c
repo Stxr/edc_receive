@@ -1,8 +1,11 @@
 #include "lcddisplay.h"
 #include "chfont.h"
+#include "delay.h"
 LCD_POINT LCD_Point;
 LCD_POINT LCD_POINT_DB;
 LCD_POINT LCD_POINT_HZ;
+LCD_POINT LCD_POINT_AV;
+LCD_POINT LCD_POINT_XX;
 /*
 显示汉字
 tfont:要显示汉字的数组
@@ -69,15 +72,19 @@ LCD_POINT LCD_show_int(u32 integer,u8 *units,LCD_POINT *p){
 */
 void LCD_Show_Init(){
 		LCD_Init();
-		LCD_ShowBmp(85,14,71,66,(u16*)zzu);
+//		LCD_ShowBmp(85,14,71,66,(u16*)zzu);
 		LCD_Point.x=POINTX_START;
 		LCD_Point.y=POINTY_START;
 		LCD_Point.prex=POINTX_START;
 		LCD_Point.prey=POINTY_START;
 		LCD_show_center(ZZU,&LCD_Point,LENGTHOF(ZZU));
 	
+		LCD_show_nextLine(AV,&LCD_Point,LENGTHOF(AV),0);
+		LCD_POINT_AV =  LCD_show_string(":",&LCD_Point);
 		LCD_show_nextLine(PL,&LCD_Point,LENGTHOF(PL),0);
 		LCD_POINT_HZ = LCD_show_string(":",&LCD_Point);
 		LCD_show_nextLine(SHJ,&LCD_Point,LENGTHOF(SHJ),0);
 		LCD_POINT_DB = LCD_show_string(":",&LCD_Point);
+		LCD_show_nextLine(XX,&LCD_Point,LENGTHOF(XX),0);
+		LCD_POINT_XX = LCD_show_string(":",&LCD_Point);
 }

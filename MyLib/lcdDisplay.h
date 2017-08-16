@@ -6,8 +6,8 @@
 #include "stdio.h"
 
 #define LENGTHOF(A) sizeof(A)/(sizeof(u8)*32)
-#define POINTX_START 16
-#define POINTY_START 84
+#define POINTX_START 84
+#define POINTY_START 92
 typedef struct lcd_point{
     u16 x;
     u16 y;

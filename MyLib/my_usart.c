@@ -1,12 +1,12 @@
 #include "my_usart.h"
 //M_USART 为使用的串口号 1-4分别为1-4号串口
-#define M_USART 4
+#define M_USART 2
 #if M_USART==1
     #define UART USART1
     #define UART_GPIO_TX GPIOA
     #define UART_GPIO_RX UART_GPIO_TX
     #define RCC_GPIO RCC_APB2Periph_GPIOA
-    #define RCC_UART RCC_APB1Periph_USART1
+    #define RCC_UART RCC_APB2Periph_USART1
     #define UART_PIN_TX  GPIO_Pin_9
     #define UART_PIN_RX  GPIO_Pin_10
     #define UART_IRQ    USART1_IRQn
@@ -23,9 +23,9 @@
     #define UARTX_IRQHandler     USART2_IRQHandler
 #elif M_USART==3
     #define UART USART3
-    #define UART_GPIO GPIOB
+    #define UART_GPIO_TX GPIOB
     #define UART_GPIO_RX UART_GPIO_TX
-    #define UART_GPIO_TX RCC_APB2Periph_GPIOB
+    #define RCC_GPIO RCC_APB2Periph_GPIOB
     #define RCC_UART RCC_APB1Periph_USART3
     #define UART_PIN_TX  GPIO_Pin_10
     #define UART_PIN_RX  GPIO_Pin_11
@@ -62,6 +62,7 @@ void USARTX_Init(u32 bound){
         
     RCC_APB2PeriphClockCmd(RCC_GPIO, ENABLE);	//使能PORTC时钟
     RCC_APB1PeriphClockCmd(RCC_UART,ENABLE); //使能UARTX
+		RCC_APB2PeriphClockCmd(RCC_UART,ENABLE); //使能UARTX
     USART_DeInit(UART);  //复位串口
         //UARTX_TX   
     GPIO_InitStructure.GPIO_Pin = UART_PIN_TX; 
@@ -134,7 +135,7 @@ void UARTX_IRQHandler(){
 	函数功能：
 				如果接收到的字符串和rec相等，则执行回调函数，需要usart.h的支持
 */
-void receiveMatch(u8 *rec,callbackRec callback){
+void receiveMatch(callbackRec callback){
 		if((USARTX_RX_STA&0x8000)!=0){
 			(*callback)(USARTX_RX_BUF);
 			//清零

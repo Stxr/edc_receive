@@ -10,7 +10,7 @@ typedef struct {
     u8 argc; //接收参数的个数
 }Data;
 void USARTX_Init(u32 bound);
-void receiveMatch(u8 *rec,callbackRec callback);//接受数据的结构体
+void receiveMatch(callbackRec callback);//接受数据的结构体
 Data afterDeal(u8 *rec);
 #define USARTX_REC_LEN 200
 extern u8  USARTX_RX_BUF[USARTX_REC_LEN]; 

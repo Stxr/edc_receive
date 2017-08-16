@@ -41,12 +41,9 @@
 ..\obj\main.o: ..\MyLib\lcd.h
 ..\obj\main.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
 ..\obj\main.o: ..\MyLib\libincludes.h
-..\obj\main.o: ..\MyLib\AD9854.h
-..\obj\main.o: ..\MyLib\HSMP3816.h
-..\obj\main.o: ..\MyLib\PE43503.h
 ..\obj\main.o: ..\MyLib\input.h
 ..\obj\main.o: ..\MyLib\capture.h
-..\obj\main.o: ..\MyLib\lcdDisplay.h
-..\obj\main.o: ..\MyLib\chinese.h
-..\obj\main.o: ..\MyLib\menu.h
+..\obj\main.o: ..\MyLib\dac.h
+..\obj\main.o: ..\MyLib\adc.h
 ..\obj\main.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h
+..\obj\main.o: ..\MyLib\chinese.h

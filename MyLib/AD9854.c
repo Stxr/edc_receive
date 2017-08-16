@@ -60,8 +60,8 @@ void AD9854_Init(void)
 	delay_ms(10);
 	
 	AD9864_Reset();
-	AD9854_Ctr(0x104a0040);//控制指令
-	//AD9854_Ctr(0x10040020);
+	AD9854_Ctr(0x104a0060);//控制指令
+	//AD9854_Ctr(0x10040020);//0x104a0040
 	
 }
 //SPI 速度设置函数
@@ -135,19 +135,19 @@ void AD9854_Write_FTW(unsigned long int frequency){
 */
 void AD9854_SetSine(unsigned long int frequency,u16 shape){
 	AD9854_Write_FTW(frequency); //设置频率控制字
-//	AD9854_CS=0;
-//	SPI1_ReadWriteByte(AD9854_I_MUL); //如果最高位是1则读，最高位是0则写 默认是0
-//	SPI1_ReadWriteByte(shape>>8); //先传高位
-//	SPI1_ReadWriteByte(shape&0xff);
-//	AD9854_CS=1;
-//	AD9854_Update();//更新
-//	
-//	AD9854_CS=0;
-//	SPI1_ReadWriteByte(AD9854_Q_MUL);
-//	SPI1_ReadWriteByte(shape>>8);
-//	SPI1_ReadWriteByte(shape&0xff);
-//	AD9854_CS=1;
-//	AD9854_Update();//更新
+	AD9854_CS=0;
+	SPI1_ReadWriteByte(AD9854_I_MUL); //如果最高位是1则读，最高位是0则写 默认是0
+	SPI1_ReadWriteByte(shape>>8); //先传高位
+	SPI1_ReadWriteByte(shape&0xff);
+	AD9854_CS=1;
+	AD9854_Update();//更新
+	
+	AD9854_CS=0;
+	SPI1_ReadWriteByte(AD9854_Q_MUL);
+	SPI1_ReadWriteByte(shape>>8);
+	SPI1_ReadWriteByte(shape&0xff);
+	AD9854_CS=1;
+	AD9854_Update();//更新
 }
 /*
 	复位

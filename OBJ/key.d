@@ -31,3 +31,9 @@
 ..\obj\key.o: ..\STM32F10x_FWLib\inc\stm32f10x_wwdg.h
 ..\obj\key.o: ..\STM32F10x_FWLib\inc\misc.h
 ..\obj\key.o: ..\SYSTEM\delay\delay.h
+..\obj\key.o: ..\MyLib\my_usart.h
+..\obj\key.o: ..\MyLib\Tool.h
+..\obj\key.o: ..\SYSTEM\usart\usart.h
+..\obj\key.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+..\obj\key.o: ..\MyLib\my_usart.h
+..\obj\key.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
